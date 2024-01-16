@@ -2,6 +2,11 @@ import Timer from "./timer"
 import { useState, useEffect } from "react"
 import { Box, Button, Stack, HStack, VStack } from '@chakra-ui/react'
 
+const lightBlue = "#F3EDC8";
+const darkYellow = "#EAD196"
+
+const lightGreen = "#D2E3C8"
+const darkGreen = "#86A789"
 
 function Tracker() {
     const [productivity, setProductivity] = useState(0);
@@ -10,6 +15,7 @@ function Tracker() {
     const [showSeconds, setShowSeconds] = useState(0);
     const [isTimerRunning, setTimerRunning] = useState(false);
     const [productivityMode, setProductivityMode] = useState(true);
+    const [backGroundColor, setBackgroundColor] = useState(lightGreen)
 
     enablePeriodicTimerUpdate(isTimerRunning, setShowSeconds, refTime)
 
@@ -22,25 +28,31 @@ function Tracker() {
     }
 
     return (
-        <VStack>
-            <Timer 
+        <VStack bg={backGroundColor} justifyContent={"center"} alignItems={"center"} minW={"100vw"} minH={"100vh"}
+        >
+            <Timer
                 seconds={showSeconds}
                 isRunning={isTimerRunning}
                 click={toggleAction}
             />
-            <HStack>
-                <Box>
-                    <VStack>
-                        <Button onClick={()=>productivityModeSwitch(setProductivityMode, true, isTimerRunning)}>
+            <HStack color={"black"} padding={"20px"}>
+                <Box padding={"20px"}>
+                    <VStack >
+                        <Button onClick={()=>productivityModeSwitch(setProductivityMode, true, isTimerRunning, setBackgroundColor)}
+                        bg={darkYellow}
+                        width={"120px"}
+                        >
                             Productivity
                         </Button>
                         <p>{Math.trunc(productivity)}</p>
                     </VStack>
                 </Box>
                 
-                <Box>
-                    <VStack>
-                        <Button onClick={()=>productivityModeSwitch(setProductivityMode, false, isTimerRunning)}>
+                <Box padding={"20px"}>
+                    <VStack >
+                        <Button onClick={()=>productivityModeSwitch(setProductivityMode, false, isTimerRunning, setBackgroundColor)}
+                        bg={darkGreen}
+                        width={"120px"}>
                             Reward
                         </Button>
                         <p>{Math.trunc(reward)}</p>
@@ -52,9 +64,15 @@ function Tracker() {
     )
 }
 
-function productivityModeSwitch(setProductivityMode, productivityEnable, running) {
+function productivityModeSwitch(setProductivityMode, productivityEnable, running, setBackgroundColor) {
     if(!running) {
         setProductivityMode(productivityEnable)
+        if(productivityEnable){
+            setBackgroundColor(lightGreen)
+        } else {
+            setBackgroundColor(lightBlue)
+        }
+        
     }
 }
 

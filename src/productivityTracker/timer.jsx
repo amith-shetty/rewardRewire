@@ -6,9 +6,11 @@ import { Stack, HStack, VStack } from '@chakra-ui/react'
 
 function Timer({seconds, isRunning, click}) {
     return (
-        <VStack>
+        <VStack color="black" padding={"20px"}>
             <p>{Math.trunc(seconds)} seconds</p>
-            <Button colorScheme='blue' onClick={click}>
+            <Button bg='white' color="black"  onClick={click}
+            width={"120px"}
+            boxShadow='dark-lg'>
                 {isRunning ? "Stop" : "Start"}
             </Button>
         </VStack>
