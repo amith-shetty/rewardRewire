@@ -28,9 +28,10 @@ mv dist/assests/<bundle name>.js vite-rendered.js
 git add vite-rendered.js
 git stash
 git checkout deploy
+git rm vite-rendered.js
 git stash pop
-git add .
-git commit -m "<commit message>"
+git add vite-rendered.js
+git commit -m "new deployment"
 git push
 ```
 
