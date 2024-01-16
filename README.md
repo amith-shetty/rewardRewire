@@ -1,8 +1,39 @@
-# React + Vite
+# rewardRewire
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a timer app to improve productivity.
+The following concepts are used for rewarding
+1. Reward based on productivity - A person can accumulate reward hours based on the amount of productive work.
+2. Random rewards to trigger dopamine - A study suggests that we release dopamine in anticpation of reward. We are using this mechanism to motivate the person to do productive work. The timer app rewards are random, thus creating a good hit of dopamine. This feedback can create addictive productivity.
 
-Currently, two official plugins are available:
+## Dependencies
+```
+npm install vite
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run 
+```
+npm run dev
+```
+
+## Build 
+
+```
+npx vite build
+```
+
+## Deploy
+Build the project, rename 
+```
+mv dist/assests/<bundle name>.js vite-rendered.js
+git stash
+git checkout deploy
+git stash pop
+git add .
+git commit -m "<commit message>"
+git push
+```
+
+
+
+
+

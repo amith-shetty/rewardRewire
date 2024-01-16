@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { Box, Button, Stack, HStack, VStack } from '@chakra-ui/react'
 import React from 'react'
 
-const lightBlue = "#F3EDC8";
+const lightYellow = "#F3EDC8";
 const darkYellow = "#EAD196"
 
 const lightGreen = "#D2E3C8"
@@ -40,7 +40,7 @@ function Tracker() {
                 <Box padding={"20px"}>
                     <VStack >
                         <Button onClick={()=>productivityModeSwitch(setProductivityMode, true, isTimerRunning, setBackgroundColor)}
-                        bg={darkYellow}
+                        bg={darkGreen}
                         width={"120px"}
                         >
                             Productivity
@@ -52,7 +52,7 @@ function Tracker() {
                 <Box padding={"20px"}>
                     <VStack >
                         <Button onClick={()=>productivityModeSwitch(setProductivityMode, false, isTimerRunning, setBackgroundColor)}
-                        bg={darkGreen}
+                        bg={darkYellow}
                         width={"120px"}>
                             Reward
                         </Button>
@@ -71,7 +71,7 @@ function productivityModeSwitch(setProductivityMode, productivityEnable, running
         if(productivityEnable){
             setBackgroundColor(lightGreen)
         } else {
-            setBackgroundColor(lightBlue)
+            setBackgroundColor(lightYellow)
         }
         
     }
