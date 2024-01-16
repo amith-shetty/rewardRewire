@@ -25,6 +25,7 @@ npx vite build
 Build the project, rename 
 ```
 mv dist/assests/<bundle name>.js vite-rendered.js
+git add vite-rendered.js
 git stash
 git checkout deploy
 git stash pop
