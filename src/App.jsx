@@ -1,5 +1,6 @@
 import { ChakraProvider, Container } from "@chakra-ui/react"
 import Tracker from "./productivityTracker/tracker"
+import React from 'react'
 
 
 function App() {

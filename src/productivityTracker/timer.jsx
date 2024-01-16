@@ -2,6 +2,7 @@ import { Box } from '@chakra-ui/react'
 import { useState, useEffect } from "react"
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { Stack, HStack, VStack } from '@chakra-ui/react'
+import React from 'react'
 
 
 function Timer({seconds, isRunning, click}) {

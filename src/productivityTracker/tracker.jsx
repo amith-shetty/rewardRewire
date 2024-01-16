@@ -1,6 +1,7 @@
 import Timer from "./timer"
 import { useState, useEffect } from "react"
 import { Box, Button, Stack, HStack, VStack } from '@chakra-ui/react'
+import React from 'react'
 
 const lightBlue = "#F3EDC8";
 const darkYellow = "#EAD196"
